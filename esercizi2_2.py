@@ -16,3 +16,7 @@ c = array_2d[:, 2]
 
 print("Elementi della colonna 3:")
 print(c)
+
+
+diviso = array_2d / c 
+print(diviso)
