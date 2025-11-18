@@ -4,7 +4,7 @@
 import numpy as np
 
 array_2d = np.random.randint(1, 50, size=(5 , 5))
-print("Array 2D originale:")
+print("Array 2D casuale:")
 print(array_2d)
 
 b = array_2d[:, [1, 3]]
