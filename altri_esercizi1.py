@@ -110,25 +110,43 @@ array_2_1 = np.random.randint(1,100,size=(3,3))
 print(array_2_1)
 
 array_3_1 = np.linspace(0,9,10)
-
-estrazione_random = np.random.randint(0,1,10)
-print(estrazione_random)
-print("\n")
-
-numeri_scelti = np.empty(5)
-j=0
-
-for i in range(10):
-    if estrazione_random[i] == 1:
-        numeri_scelti[j] = array_3_1[i]
-        j=j+1
-    else:
-        continue
-
-print(numeri_scelti)
+numeri_scelti = np.random.choice(array_3_1 , size=5 , replace=False)
 
 print("\n")
 print("\n")
 print("\n")
 
 #Esercizio 7
+
+import numpy.linalg as LA
+
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+
+prodotto_matriciale = np.dot(A,B)
+
+det_A = LA.det(A)
+inv_A = LA.inv(A)
+autovalori = LA.eig(A)
+
+print(det_A)
+print(inv_A)
+print(autovalori)
+
+print("\n")
+print("\n")
+print("\n")
+
+#Esercizio 8
+
+matrice_casuale = np.random.random((4,3))
+
+medie_righe = np.mean(matrice_casuale,axis=0)
+nuova_matrice = np.empty((4,3))
+
+for i in range(2):
+    nuova_matrice = matrice_casuale[1, :] - medie_righe[i]
+    nuova_matrice = matrice_casuale[2, :] - medie_righe[i]
+    nuova_matrice = matrice_casuale[3, :] - medie_righe[i]
+
+print(nuova_matrice)
