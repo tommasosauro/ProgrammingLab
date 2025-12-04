@@ -38,11 +38,13 @@ print("\n")
 
 #Riprodurre il grafico dell'esercizio
 
+sales_per_genere = df.groupby("Genre")["Global_Sales"].sum().sort_values()
+
 plt.figure(figsize=(12,6))
-sns.histplot(data=df, x=["Genre"], y=["Global_Sales"])
-plt.title("Vendite per genere")
-plt.xlabel("Genere")
-plt.ylabel("Milioni di unità")
+plt.bar(sales_per_genere.index, sales_per_genere.values)
+plt.title("Vendite Globabili per Genere")
+plt.xlabel("Generi")
 plt.grid(False)
 plt.show()
+
 
